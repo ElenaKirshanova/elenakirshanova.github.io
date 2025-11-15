@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Лабораторная № 0</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/default.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+        <style>
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 80%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+</style>
+    </head>
+	<body>
+        <h1> <center> Лабораторная № 0 к курсу <a href="../lattices_2023.html"> "Криптография на решетках 2023" </a> </center> </h1>
+
+				<p> <b>  Опубликовано: </b> 23.01.23 </p>
+				<p> <b>  Приём лабораторной: </b> эта лабораторная не будет проверяться  </p>
+
+				<h3>  Инструкция </h3>
+
+				<ol>
+					<li> Установить библиотеку <a href="https://github.com/fplll/fpylll"> FPyLLL </a> Про FPyLLL можно прочитать <a href="https://martinralbrecht.wordpress.com/2016/04/03/fpylll/"> здесь </a>  </li>
+					<li> Убедитесь в корректной установке библиотеки, запустив сниппет  </li>
+				</ol>
+
+				<pre><code class="python"># https://buildmedia.readthedocs.org/media/pdf/fpylll/latest/fpylll.pdf
+				from fpylll import *
+				FPLLL.set_random_seed(2023)
+				A = IntegerMatrix(20,20)
+				A.randomize("qary", k=10, q=256)
+				print(A)
+				B = IntegerMatrix(25,25)
+				B.randomize("uniform", bits=13)
+				print(B)
+
+				AGSO = GSO.Mat(A)
+				print(AGSO.get_mu(1,0))
+				_ = AGSO.update_gso()
+				print(AGSO.get_mu(1,0))
+				print(AGSO.get_mu(2,0))</code></pre>
+
+
+
+
+
+	</body>
+</html>

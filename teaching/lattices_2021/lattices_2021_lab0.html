@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Лабораторная № 0</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/default.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+        <style>
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 80%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+</style>
+    </head>
+	<body>
+        <h1> <center> Лабораторная № 0 к курсу <a href="../lattices_2021.html"> "Криптография на решетках 2021" </a> </center> </h1>
+
+				<p> <b>  Опубликовано: </b> 12.01.21 </p>
+				<p> <b>  Приём лабораторной: </b> эта лабораторная не будет проверяться  </p>
+
+				<h3>  Инструкция </h3>
+
+				<ol>
+					<li> Установить библиотеку <a href="https://github.com/fplll/fpylll"> FPyLLL </a> Про FPyLLL можно прочитать <a href="https://martinralbrecht.wordpress.com/2016/04/03/fpylll/"> здесь </a>  </li>
+					<li> Убедитесь в корректной установке библиотеки, запустив сниппет  </li>
+				</ol>
+
+				<pre><code class="python">from fpylll import *
+set_random_seed(2021)
+A = IntegerMatrix.random(25, "qary", k=50, bits=30) #generate a q-ary 25-dimensianal lattice of det=q^50, where log(q = 30)
+v = SVP.shortest_vector(A) # compute a shortest vector
+print(v, v.norm()) </code></pre>
+
+
+
+
+
+	</body>
+</html>

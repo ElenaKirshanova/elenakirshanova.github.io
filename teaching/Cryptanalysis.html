@@ -1,0 +1,309 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Cryptanalysis</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<!--<link rel="stylesheet" href="assets/css/main.css" /> -->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+    
+    <style>
+      table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 88%;
+      }
+    
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+    .pdf_icon {
+      position: relative;
+    }
+    
+    .pdf_icon:before {
+      content: "\f1c1";
+      font-family: FontAwesome;
+      color: var(--main_colour);
+      font-style: normal;
+      font-weight: normal;
+      text-decoration: none;
+      font-size: 17px;
+      padding-left: 10px;
+    }
+
+
+    </style>
+
+	</head>
+	<body>
+    
+       <h1> <center> Cryptanalysis </center> </h1>
+       
+       <h2>  General Information </h2>
+       
+       <p>
+       <b> Instructors: </b>
+       <ul>
+         <li> Part I: <a href="http://perso.ens-lyon.fr/elena.kirshanova/"> Elena Kirshanova </a> </li>
+         <li> Part II: <a href="http://perso.ens-lyon.fr/guillaume.hanrot/"> Guillaume Hanrot </a> </li>
+       </ul>
+       </p>
+       
+       <p>
+       <b> Where: </b> Amphi B, Monod
+       </p>
+       <p>
+       <b> When: </b> Tuesdays, 15h45-17h45
+       </p>
+       </p>
+
+       
+       <p>
+       <b> Evaluation: </b> 50%  scribe + 50% article presentation
+       </p>
+       
+       <p>
+       <b> Template: </b> Please use <a href="http://perso.ens-lyon.fr/elena.kirshanova/teaching/lec-template.tex"> this </a> template for your scribe
+       </p>
+       
+       <p>
+       <b> Prerequisites (advisable but not mandatory): </b>
+       <ul>
+         <li> <a href="http://perso.ens-lyon.fr/omar.fawzi/teaching/proba/index.html"> Probability (L3) </a> </li>
+         <li> <a href="http://www.ens-lyon.fr/DI/?p=3924"> Computer Algebra (M1) </a> </li>
+         <li> <a href="http://www.ens-lyon.fr/DI/?p=3929"> Cryptography (M1) </a> </li>
+       </ul>
+       </p>
+       
+       <p>
+       <b> Reading: </b>
+       <ul>
+         <li> A.May, <a href="http://www.cits.rub.de/imperia/md/content/may/kryptanalyse_ii.pdf"> Lecture 'Kryptanalyse Teil II' (in German) </a> </li>
+         <li> J. Hoffstein, J.Pipher, J.H.Silverman "An Introduction to Mathematical Cryptography" </li>
+         <li> S.D. Galbraith "Mathematics of Public Key Cryptography" </li>
+         <li> A.Joux "Algorithmic Cryptanalysis"  </li>
+       </ul>
+       </p>
+       
+       <p>
+       <h2> Exam </h2>
+       <b>  When: </b> 15th of January 2019 <br>
+       <b>  Where: </b> TBA <br>
+       <b>  Rules: </b> <br>
+       Each student must choose one article from the proposed list and prepare an oral presentation.<br>
+       Each student has <b>20 minutes</b> for the presentation + <b>20 minutes</b> for questions.<br>
+       In the presentation you should
+       <ul>
+         <li> put the result in the context of the course material (relevance of the result) </li>
+         <li> explain the main technical contribution of the article </li>
+         <li>summarize the result(s) of the article </li>
+         </ul>
+       There is no template, use whatever you want (LaTex, PowerPoint, etc.)
+       
+       At the end of the presentation, the examiners will ask question(s) on the course material.
+       </p>
+       
+       </p>
+       
+       
+       <h2>  Articles for presenations </h2>
+       
+       <ul>
+         <li> I. Dinur, O. Dunkelman, N. Keller, Adi Shamir <a href="https://eprint.iacr.org/2012/217.pdf"> <i>Efficient Dissection of Composite Problems, with Applications to Cryptanalysis, Knapsacks, and Combinatorial Search Problems  </i></a> <b>  [Tymofii Prokopenko] </b> </li>
+         <li> L. Minder, A. Sinclair <a href="https://people.eecs.berkeley.edu/~sinclair/ktree.pdf"> <i> The extended k-tree algorithm </i></a> <b> [Ta Duy-Hoang] </b> </li>
+         <li> D. Aggarwal, P. Mukhopadhyay <a href="https://arxiv.org/abs/1801.02358"> <i>
+               Improved algorithms for the Shortest Vector Problem and the Closest Vector Problem in the infinity norm </i> </a> <b> [Purohit Nidhi] </b> </li>
+         <li> S. D. Galbraith, S. W. Gebregiyorgis, S. Murphy <a href="https://eprint.iacr.org/2016/215.pdf"> <i> Algorithms for the Approximate Common Divisor Problem </i> </a> <b> [Pierre Meyer] </b> </li>
+         <li> P. Nguyen,  J. Stern <a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.90.7518&rep=rep1&type=pdf"> <i> The Hardness of the Hidden Subset Sum Problem and Its Cryptographic Implications   </i>   </a> <b> [Daniel Szilagyi] </b> </li>
+           
+         <li> D. Boneh, G. Durfee, N. Howgrave-Graham <a href="https://link.springer.com/content/pdf/10.1007%2F3-540-48405-1_21.pdf">  Factoring <i>N=p<sup>r </sup> q </i> for Large <i> r</i></a>  <b> [François Pitois] </b></li>
+         
+         <li> J-S. Coron <a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.414.9610&rep=rep1&type=pdf"> Finding Small Roots of Bivariate Integer
+           Polynomial Equations Revisited </a> <b>[Caroline Brosse]</b></li>
+         
+         <li> R. P. Brent, A. Kruppa, P. Zimmermann <a href = "https://members.loria.fr/PZimmermann/papers/Chap8.pdf">FFT extension for algebraic-group factorization algorithms </a></li>
+         
+         <li> M.Case <a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.219.2389&rep=rep1&type=pdf"> A Beginner’s Guide To The General Number Field Sieve</a> <b> [Joël Felderhoff]</b></li>
+         <li> B. A. LaMacchia, A. M. Odlyzko <a href="https://pdfs.semanticscholar.org/4a6e/e9065dde391684dbc79f2f81326f24d83a69.pdf?_ga=2.64795375.1152419549.1544204413-1084624968.1544028105">Computation of Discrete Logarithms in Prime Fields </a> </li>
+         
+         <li> I. Duursma, P. Gaudry, F. Morain <a href="https://hal.inria.fr/inria-00511639/document"> Speeding up the discrete log computation on curves with automorphisms </a> <b> [Robin Vacus] </b></li>
+                 
+        </ul>
+       
+
+       
+       
+       <h2>  Schedule </h2>
+       
+       <table>
+         <tr>
+           <th>Week</th>
+           <th>Class Topic</th>
+           <th>Sources</th>
+           <th>Scribe</th>
+         </tr>
+         <tr>
+           <td>11.09</td>
+           <td> The subset sum problem. Schroeppel-Shamir algorithm </td>
+           <td> N.Howgrave-Graham, A.Joux <a href="https://eprint.iacr.org/2010/189.pdf"> New Generic Algorithms for Hard Knapsacks </a></td>
+           <td width="120"> <a href="http://perso.ens-lyon.fr/elena.kirshanova/teaching/cr10_scribes/lecture1_v2.pdf"> Lecture 1 </span>  </a> </td>
+        </tr>
+        <tr>
+           <td>18.09</td>
+           <td> The k-list problem. An algorithm for dense subset sum </td>
+           <td> <p>D.Wagner <a href="https://pdfs.semanticscholar.org/3ce6/544a379e240be41a9ddb8c52597ac5e48e8b.pdf">  A generalized birthday problem </a> </p>
+                V.Lyubashevsky <a href="https://pdfs.semanticscholar.org/08d9/01a94599ab95b1138f0ee68c5d0cda31bd68.pdf"> On Random High Density Subset Sums </a>
+           </td>
+           <td> <a href="http://perso.ens-lyon.fr/elena.kirshanova/teaching/cr10_scribes/lec2.pdf"> Lecture 2 </span>  </a></td>
+        </tr>
+        <tr>
+          <td>25.09</td>
+          <td> The Learning Parity with Noise (LPN) problem. The BKW algorithm for LPN. </td>
+          <td> A.Blum, A.Kalai, H.Wasserman <a href="https://www.microsoft.com/en-us/research/wp-content/uploads/2016/11/2003-Noise-Tolerant_Learning.pdf"> Noise-Tolerant Learning, the Parity Problem,
+            and the Statistical Query Model </a> </td>
+          <td> <a href="http://perso.ens-lyon.fr/elena.kirshanova/teaching/cr10_scribes/lec3.pdf"> Lecture 3 </span> </td>
+        </tr>
+        
+        <tr bgcolor="#CBCBCB">
+          <td>02.10</td>
+          <td colspan="4"> NO LECTURE </td>
+        </tr>
+        
+        <tr bgcolor="#CBCBCB">
+          <td>09.10</td>
+          <td colspan="4"> NO LECTURE </td>
+        </tr>
+
+        <tr>
+          <td>17.10</td>
+          <td> Information Set Decoding. The representation technique</td>
+          <td> A. May, A. Meurer, A. Thomae <a href="http://www.cits.rub.de/imperia/md/content/may/paper/decoding.pdf"> Decoding Random Linear Codes in \softO(2^{0.054n}) </a>
+          </td>
+          <td> <a href="http://perso.ens-lyon.fr/elena.kirshanova/teaching/cr10_scribes/lec4.pdf"> Lecture 4 </span> </td>
+        </tr>
+        
+        <tr>
+          <td>23.10</td>
+          <td> Euclidean lattices. An algorithm for low density subset sum</td>
+          <td> M. J. Coster, B. A. LaMacchia, A. M. Odlyzko, C. P. Schnorr <a href="https://link.springer.com/chapter/10.1007/3-540-46416-6_4"> An Improved Low-Density Subset Sum Algorithm </a> </td>
+          <td> <a href="http://perso.ens-lyon.fr/elena.kirshanova/teaching/cr10_scribes/lec5.pdf"> Lecture 5 </span> </td>
+        </tr>
+        
+        <tr>
+          <td>24.10</td>
+          <td> Coppersmith method (univariate)</td>
+          <td> D. Coppersmith <a href="https://www.di.ens.fr/~fouque/ens-rennes/coppersmith.pdf">Small Solutions to Polynomial Equations, and Low Exponent RSA Vulnerabilities </a> </td>
+          <td> <a href="http://perso.ens-lyon.fr/elena.kirshanova/teaching/cr10_scribes/lec6.pdf"> Lecture 6 </span></td>
+        </tr>
+        
+        <tr bgcolor="#CBCBCB">
+          <td>30.10</td>
+          <td colspan="4"> VACATIONS </td>
+        </tr>
+        
+        <tr>
+          <td>06.11</td>
+          <td> Coppersmith method (bivariate)</td>
+          <td> D. Coppersmith <a href="https://link.springer.com/chapter/10.1007/3-540-68339-9_16">Finding a Small Root of a Bivariate Integer Equation; Factoring with High Bits Known </a> </td>
+          <td> <a href="http://perso.ens-lyon.fr/elena.kirshanova/teaching/cr10_scribes/lec7.pdf"> Lecture 7 </span> </td>
+        </tr>
+        
+        <tr bgcolor="#CBCBCB">
+          <td>13.11</td>
+          <td colspan="4"> Research School </td>
+        </tr>
+        
+        <tr>
+          <td>20.11</td>
+          <td> Integer Factoring Algorithms I </td>
+          <td> Deterministic factoring, Pollard-rho, (p-1) Pollard </td>
+          <td> <a href="http://perso.ens-lyon.fr/elena.kirshanova/teaching/cr10_scribes/lec8.pdf"> Lecture 8 </a> </td>
+        </tr>
+        
+        <tr bgcolor="#CBCBCB">
+          <td>27.11</td>
+          <td colspan="4"> Research School </td>
+        </tr>
+        
+        <tr>
+          <td>04.12</td>
+          <td> Integer Factoring Algorithms II </td>
+          <td> (p+1) Method, ECM, Congruence-based methods (Dixon, quadratic sieve)</td>
+          <td> <a href="http://perso.ens-lyon.fr/elena.kirshanova/teaching/cr10_scribes/lec9.pdf"> Lecture 9 </a> </td>
+        </tr>
+        
+        <tr>
+          <td>11.12</td>
+          <td> The Dlog Problem I </td>
+          <td>  </td>
+          <td> <a href="http://perso.ens-lyon.fr/elena.kirshanova/teaching/cr10_scribes/lec10.pdf"> Lecture 10 </a> </td>
+        </tr>
+        
+        <tr>
+          <td>18.12</td>
+          <td> The Dlog Problem II </td>
+          <td>  </td>
+          <td> Lecture 11 </td>
+        </tr>
+
+
+
+         </table>
+       
+         
+         
+         
+         
+
+
+<!--
+        <h3> Tentative plan: </h3>
+        
+        <h4> I. Combinatorial algorithms: </h4>
+        <ol>
+            <li> Meet-in-the-middle. Shamir-Schroeppel trick for low-memory MiTM. Applications to DES, 2DES, Collision-search for hash functions, MiTM for SubsetSum
+            </li>
+            <li> Generalized birthday k-list algorithm. Applications: attacks on a ring-signature, on incremental hash-functions, construction of polynomials multiples; dense subset sum 
+            </li>
+            <li>Information set decoding (ISD) algorithms: problem statement, Prange, Stern, Representation technique 
+            </li>
+            <li> LPN problem and BKW 
+            </li>
+        </ol>
+        
+        <h4> II. Lattice-based algorithms: </h4>
+        <ol>
+            <li> Introduction to lattices, attack on sparse subset-sum (knapsack cryptosystem), algorithm for the hidden-number problem
+            </li>
+            <li> Coppersmith small-root algorithm for solving system of modular linear equantions. Applications to RSA: stereotype-messages, short-pad attack
+            </li>
+            <li> Coppersmith continued (for multivariate polynomials): Applications to RSA: small public-exponent, partial key-exposure
+            </li>
+        </ol>
+        
+        <h4> III. Number Theory </h4>
+            <ul>
+                <li> Algorithms for factoring: 
+                <ol> 
+                    <li> Pollard's (p-1) method,  Pollard rho ; group-based method: Pollard p-1, p+1 (?), Lenstra's ECM </li>
+                    <li> Quadratic sieve, review of state-of-the art (NFS) </li>
+                </ol>
+                </li>
+                <li> Algorithms for discrete logarithm :
+                    <ol> 
+                    <li> Shanks' baby-step giant-step; Pollard rho; </li>
+                    <li> Pohlig-Hellman </li>
+                    <li> Lower bounds in a generic group </li>
+                    <li> Index calculus method. Review of state of the art (large, medium, small
+char). </li>
+                    </ol>
+                </li>
+            </ul>
+            
+        -->
+	</body>
+</html>

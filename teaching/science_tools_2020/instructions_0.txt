@@ -1,0 +1,69 @@
+
+1. Создайте репозиторий на любом из бесплатных веб-сервисов систем конроля версий:
+  
+  https://github.com/
+  https://gitlab.com/
+  https://bitbucket.org/
+
+Назовите репозиторий своей фамилией.
+
+Склонируйте репозиторий на свой локальный компьютер.
+
+
+Инструкции по работе с GIT:
+
+https://missing.csail.mit.edu/2020/version-control/
+
+
+2. В репозитории создайте две папки:
+	Lab 1
+	Lab 2
+Третьему курсу достаточно создать одну папку.
+
+
+
+3. Установите LaTeX и (опционально) редактор для LaTeX. Рекомендуется TeXstudio (https://www.texstudio.org/) 
+Не рекомендуется TexMaker.
+
+Инструкции по установке LaTeX для Linux и MacOS можно найти здесь:
+
+https://docs.typo3.org/typo3cms/extensions/sphinx/2.5.1/AdministratorManual/RenderingPdf/InstallingLaTeXLinux.html
+
+Для Windows (не рекомендуется) можно воспользоваться одним из вариантов:
+* TexLive (https://www.tug.org/texlive/acquire-netinstall.html)
+* Miktex (https://miktex.org/download)
+
+
+4. Создайте текстовый документ в LaTex'e:
+Документ должен быть скопмилирован без ошибок. Этот документ не обязательно загружать в ваш репозиторий на GIT.
+
+\documentclass{article}
+\usepackage{graphicx}
+
+\begin{document}
+
+\title{Introduction to \LaTeX{}}
+\author{Author's Name}
+
+\maketitle
+
+\begin{abstract}
+The abstract text goes here.
+\end{abstract}
+
+\section{Introduction}
+Here is the text of your introduction.
+
+\begin{equation}
+    \label{simple_equation}
+    \alpha = \sqrt{ \beta }
+\end{equation}
+
+\subsection{Subsection Heading Here}
+Write your subsection text here.
+
+
+\section{Conclusion}
+Write your conclusion here.
+
+\end{document}

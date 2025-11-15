@@ -1,0 +1,27 @@
+
+1. В таблицах на странице курса найдите свою фамилию и соответствующий .pdf файл. Загрузите его.
+Это будет отсканированный текст с формулами и/или алгоритмами. Ваша задача: корректно оформить этот документ в LaTeX'e с переводом на русский язык.
+
+2. В папке Lab1 создайте докумен .tex
+В качестве шаблона возьмите документ template.tex со страницы курса.
+
+3. Оформляйте текст, используя следующие руководства:
+
+-- Для новичков: http://www.docs.is.ed.ac.uk/skills/documents/3722/3722-2014.pdf
+-- Видео: https://www.youtube.com/watch?v=SoDv0qhyysQ&list=PL1D4EAB31D3EBC449 
+
+Большинство необходимого материала описано в первой ссылке.
+
+** Алгоритмы следует оформлять с помощью пакета algorithmic, как показано в шаблоне. 
+   Руководство по этому пакету:
+   http://tug.ctan.org/macros/latex/contrib/algorithmicx/algorithmicx.pdf
+   https://en.wikibooks.org/wiki/LaTeX/Algorithms#Typesetting_using_the_algorithmic_package 
+
+** Список литературы следует оформлять с помощью пакета BibTex
+   инструкция: https://en.wikibooks.org/wiki/LaTeX/Bibliography_Management#BibTeX
+   пример:  https://www.overleaf.com/project/5eecd4f4521cb200016684d9
+
+ 
+
+4. Загрузите готовые .tex и .bib файлы (и только их!) на GIT в папку Lab 1.
+

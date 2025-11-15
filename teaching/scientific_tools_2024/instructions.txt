@@ -1,0 +1,24 @@
+
+1. Создайте аккаунт на
+
+  https://www.overleaf.com/
+
+Overleaf -- он-лайн редактор для LaTeX. LaTeX -- система вёрстки, используемая в научных публикациях и презентациях.
+
+По ссылке
+  https://www.overleaf.com/learn/how-to/Creating_a_document_in_Overleaf
+
+вы найдете инструкции по работе с Overleaf, хотя он интуитивный.
+
+2. Создайте новый проект, назвав его своей фамилией и расшарьте на мою почту, используя опцию Share.
+
+3. В качестве основного файла (назовите его main.tex) загрузите тэмплейт, данный на странице курса
+
+https://crypto-kantiana.com/elena.kirshanova/teaching/science_tools_2024/lec-template.tex
+
+4. Перейдите по ссылке https://docs.google.com/spreadsheets/d/1bCak2eFhk7tOBHkS_Q0auuYN50B7QId9TzF_LpL75Sc/edit?usp=sharing
+Найдите свою фамилию и откройте файл, стоящий напротив неё. Вам откроется .pdf, содержащий рукописную лекцию.
+Ваша задача: оформить эту лекцию в LaTeX в созданном вами файле main.tex
+
+5. Начать знакомство в LaTeX можно по ссылке https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes
+Доп. литература дана на странице практики https://crypto-kantiana.com/elena.kirshanova/teaching/science_tools_2024/

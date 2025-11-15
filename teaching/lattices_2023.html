@@ -1,0 +1,223 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Криптография на решетках</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+        <style>
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 80%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+</style>
+    </head>
+	<body>
+        <h1> <center> Криптография на решетках 2023 </center> </h1>
+        <h2>  Общая информация </h2>
+
+        <p>
+        <b> Лектор: </b>  <a href="https://crypto-kantiana.com/elena.kirshanova/">  Елена Киршанова </a>
+
+        </p>
+
+        <p>
+        <b> Практика: </b>  <a href="https://crypto-kantiana.com/elena.kirshanova/">  Елена Киршанова </a> <a href="https://crypto-kantiana.com/alexander.karenin/"> Александр Каренин </a>
+        </p>
+
+        <p>
+        <b> Лекции: </b> Понедельник 8h30-10h00 в <a href="https://zoom.us/j/96264253196?pwd=Mmo2dkNSZnYxUHRVMjB1MWN3Y2FsUT09"> zoom </a>
+        </p>
+
+        <p>
+        <b> Практика: </b> Понедельник, 10h10-11h30 в <a href="https://zoom.us/j/96264253196?pwd=Mmo2dkNSZnYxUHRVMjB1MWN3Y2FsUT09"> zoom </a>
+        </p>
+
+				<h2>  Для прохождения курса требуется </h2>
+
+				<ol>
+					<li> Выполнить и сдать все лабораторные работы   </li>
+					<li> Сдать экзамен   </li>
+				</ol>
+
+				<h2>  Система бонусов </h2>
+
+				<ol>
+					<li> За корректное выполнение >80% всех практик: +2 балла на экзамене </li>
+					<li> За корректное выполнение >50% всех практик: +1 балл на экзамене </li>
+				</ol>
+
+			<h2>  Лабораторные работы </h2>
+				<ol>
+
+					<li> <a href="lattices_2023/lattices_2023_lab0.html"> Лабораторная № 0 </a>  </li>
+					<li> <a href="lattices_2023/TP1.pdf"> Лабораторная № 1 </a>  </li>
+
+					<li> <a href="lattices_2023/TP2.pdf"> Лабораторная № 2 </a> <a href="lattices_2023/tp2_oracle.sage">  MSB оракул </a>  </li>
+
+					<li> <a href="lattices_2023/TP3.pdf"> Лабораторная № 3 </a>  </li>
+					<li> <a href="lattices_2023/ntrulab.pdf"> Лабораторная № 4 </a> <a href="lattices_2023/labntru/labgen.sage">  Генератор параметров </a>  </li>
+						<ul>
+							<li> <a href="lattices_2023/labntru/Duplenko.txt"> Duplenko.txt </a>  </li>
+							<li> <a href="lattices_2023/labntru/Goodasov.txt"> Goodasov.txt </a>  </li>
+							<li> <a href="lattices_2023/labntru/Ishmetov.txt"> Ishmetov.txt </a>  </li>
+							<li> <a href="lattices_2023/labntru/Lysenko.txt"> Lysenko.txt </a>  </li>
+							<li> <a href="lattices_2023/labntru/Matzul.txt"> Matzul.txt </a>  </li>
+							<li> <a href="lattices_2023/labntru/Ratochka.txt"> Ratochka.txt </a>  </li>
+							<li> <a href="lattices_2023/labntru/Sokolenko.txt"> Sokolenko.txt </a>  </li>
+							<li> <a href="lattices_2023/labntru/Torsukova.txt"> Torsukova.txt </a>  </li>
+						</ul>
+
+					<li> <a href="lattices_2023/TP5.pdf"> Доп. Лабораторная </a> &emsp; <a href="lattices_2021/lab5.sage"> Hash функция </a>  </li>
+
+
+				</ol>
+				<!--
+				<h2> Экзамен </h2>
+				<a href="lattices_2023/klausur.pdf"> .pdf </a> </br>
+				<a href="lattices_2023/merkle-hellman.sage"> merkle-hellman.sage </a>
+			-->
+
+				<h2>  Полезные ссылки </h2>
+				<ol>
+					<li>  <a href="http://perso.ens-lyon.fr/damien.stehle/LBCF_course.html"> Лекции Damien Stehlé </a> </li>
+					<li>  <a href="https://cims.nyu.edu/~regev/teaching/lattices_fall_2009/index.html"> Лекции Oded Regev </a> </li>
+					<li>  <a href="https://cseweb.ucsd.edu/classes/wi04/cse206a/"> Лекции Daniele Micciancio </a> </li>
+					<li> <a href="https://thelatticeclub.com/"> The lattice club </a> </li>
+				</ol>
+
+         <h2>  Расписание </h2>
+
+        <table>
+          <tr>
+            <th>Дата</th>
+            <th>Тема</th>
+            <th>Упражнения</th>
+          </tr>
+
+
+          <tr>
+            <td>16.01</td>
+						<td> Основные определения: евклидова решетка, определитель, минимумы <a href="lattices_2023/Lec1.pdf"> .pdf </a>  <a href="https://youtu.be/5Gn59XlZyK4"> video </a> </td>
+            <td> <a href="lattices_2022/TD1.pdf"> Упражнения № 1 </a> </td>
+					 </tr>
+
+					<tr>
+						<td> 23.01</td>
+						<td> Теорема Минковского, конструкция А <a href="lattices_2023/Lec2.pdf"> .pdf </a>  <a href="https://youtu.be/ZxS7Mnq4HRY"> video </a> </td>
+						<td> <a href="lattices_2023/TD2.pdf"> Упражнения № 2 </a>  </td>
+          </tr>
+
+					</tr>
+					<td>30.02</td>
+					<td> LLL алгоритм <a href="lattices_2023/Lec3.pdf">  .pdf </a>  <a href="https://youtu.be/91SK-7VgZVQ>"> video </a>  <a href="lattices_2023/LLL_example.py"> Скрипт LLL </a>  </td>
+					<td> <a href="lattices_2023/TP1.pdf"> Лабораторная № 1  </a> &emsp; <a href="lattices_2023/lab1_input.txt"> lab1_input  </a> </td>
+					</tr>
+
+					</tr>
+					<td>06.02</td>
+					<td> Алгоритм перечисления для SVP. BKZ алгоритм <a href="lattices_2023/Lec4.pdf">  .pdf  </a>  <a href="https://youtu.be/47blBPT6jz4"> video </a> </td>
+					<td> <a href="lattices_2023/BKZ_example.py"> Скрипт BKZ </a>&emsp;
+					<a href="lattices_2023/enumeration_example.py"> Скрипт Enumeration </a>  </td>
+					</tr>
+
+					</tr>
+					<td>13.02</td>
+					<td> Алгоритм просеивания <a href="lattices_2023/Lecture_sieving.pdf">  .pdf </a> &emsp; <a href="https://youtu.be/2IFppnWGzNU"> video </a> &emsp; <a href="lattices_2023/sieving.py"> G6k скрипт  </a> </td>
+					<td> Прием лабораторной № 1</td>
+					</tr>
+
+					</tr>
+					<td>20.02</td>
+					<td> SVP vs. CVP. Сложность CVP. <a href="lattices_2023/Lec6.pdf">  .pdf </a>  &emsp; <a href="https://youtu.be/sg4aV6yIF2c"> video part 1 </a>  &emsp; <a href="https://youtu.be/xdPpk6wZgsQ"> video part 2 </a>  &emsp; <a href="lattices_2023/babai.py">  babai.py </a> </td>
+					<td>  <a href="lattices_2023/TD3.pdf"> Упражнения № 3 </a>  </td>
+					</tr>
+
+					</tr>
+					<td> 27.02</td>
+					<td> Сложность CVP <a href="lattices_2023/Lec7.pdf">  .pdf </a> &emsp; <a href="https://youtu.be/E4rm56XvghU"> video </a>  </td>
+					<td>   </td>
+					</tr>
+
+					</tr>
+					<td>6.03</td>
+					<td> BDD, uSVP, SVP <a href="lattices_2023/Lec8.pdf">  .pdf </a> &emsp; <a href="https://youtu.be/ZUCSMZDbTEU"> video </a> </td>
+					<td> <a href="lattices_2023/TD4.pdf"> Упражнения № 4 </a>  </td>
+					</tr>
+
+					</tr>
+					<td>13.03</td>
+					<td> Редукция от uSVP to SVP <a href="lattices_2023/Lec8_2.pdf"> .pdf </a>  &emsp; <a href="https://youtu.be/c4y6U_6iZkg"> video </a>  &emsp;
+							 Преобразование Фурье. Гауссова функция <a href="lattices_2023/Lec9_1.pdf">  .pdf </a>  <a href="https://youtu.be/f-DW466740c"> video </a> </td>
+					<td> <a href="lattices_2023/TD5.pdf"> Упражнения № 5 </a>  </td>
+					</tr>
+
+					</tr>
+					<td> 20.03</td>
+					<td> Гауссово распределение на решетке. Определение, свойства <a href="lattices_2023/Lec10.pdf">  .pdf </a>  &emsp; <a href="https://youtu.be/qABi9COiAUk"> video </a>  </td>
+					<td> см. Упражнения № 5, задание № 2 </td>
+					</tr>
+
+					</tr>
+					<td> 27.03</td>
+					<td>  Сглаживающий параметр <a href="lattices_2023/Lec11.pdf">  .pdf </a> <a href="https://youtu.be/8XQMSddKm_0"> video </a> </td>
+					<td>  </td>
+					</tr>
+
+					</tr>
+					<td> 03.04</td>
+					<td>  Гауссова выборка над Z. Гауссова выборка над произвольной решеткой <a href="lattices_2023/Lec12.pdf">  .pdf </a> <a href="https://youtu.be/6ZiDjsFkNYU"> video </a> </td>
+					<td>  </td>
+					</tr>
+
+					</tr>
+					<td> 10.04</td>
+					<td>  Задача SIS <a href="lattices_2023/Lec13.pdf"> .pdf </a> &emsp; <a href="https://youtu.be/KSF26gf_yMk"> video </a> </td>
+					<td> Сдача лабораторной № 3 </td>
+					</tr>
+
+					</tr>
+					<td>24.04</td>
+					<td> "Потайной ход" для задачи SIS  <a href="lattices_2023/Lec14.pdf"> .pdf </a>  <a href="https://youtu.be/YpJGk6glfx4"> video </a> </td>
+					<td> <a href="lattices_2023/TD6.pdf"> Упражнения № 6 </a> </td>
+					</tr>
+
+
+					</tr>
+					<td>15.05</td>
+					<td> Подпись GPV <a href="lattices_2023/Lec15.pdf"> .pdf </a> <a href="https://youtu.be/aVM6SB8lTG4"> video </a>  <a href="https://www.youtube.com/watch?v=zVVQK-uGLzQ&t=4588s"> Еще одна конструкция подписи </a>   </td>
+					<td> Сдача лабораторной № 4 </td>
+					</tr>
+
+				</tr>
+				<td>22.05</td>
+				<td> Задача LWE. PKE <a href="lattices_2023/Lec16.pdf"> .pdf </a> <a href="https://youtu.be/UhWAaGMtYcc"> video </a>  </td>
+				<td>  </td>
+				</tr>
+
+			</tr>
+				<td>29.05</td>
+				<td> Современные криптоалгоритмы на решетках <a href="lattices_2023/overview.pdf"> .pdf </a> <a href="https://youtu.be/8bxrN4CY4HY"> video </a> </td>
+				<td>  </td>
+				</tr>
+
+
+
+        </table>
+
+
+	</body>
+</html>

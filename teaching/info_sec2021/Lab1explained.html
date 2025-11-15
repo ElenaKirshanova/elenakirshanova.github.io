@@ -1,0 +1,106 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title> Crypto I </title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/default.min.css">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+<style>
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 80%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+</style>
+    </head>
+	<body>
+        <h1> <center> Объяснение Лабораторной работы № 1</center> </h1>
+
+	<p>
+	<b>  Задание:  </b> реализовать интерфейс для функции потокового шифрования (OTP + PRG)
+	</p>
+
+	<p>
+	<b>  Решение: </b> используем бибилиотеку <a href="https://www.cryptopp.com/"> Crypto++® Library 8.4 </a>
+	В качестве псевдослучайного генератора используем <a href="https://www.cryptopp.com/wiki/ChaCha20"> ChaCha20 </a>
+
+<ol>
+<li> Подключаем необходимые хэдеры библиотеки и задаем namespace CryptoPP </li>
+<pre><code class="language-сpp">
+#include "cryptlib.h"
+#include "secblock.h" // 32 байтный блок данных https://stackoverflow.com/questions/39751312/advantages-of-secbyteblock-class-from-crypto
+#include "chacha.h" // подключаем генератор Chacha
+#include "osrng.h" // подключаем AutoSeededRandomPool
+#include "files.h"
+#include "hex.h" // для красивого вывода
+
+#include <iostream>
+#include <string>
+
+using namespace CryptoPP;</code></pre>
+
+<li> Генерируем секретный ключ. Для этого выбираем случайный генератор из списка возможных (стандартный AutoSeededRandomPool). <br>
+Функция GenerateBlock берет на вход тип SecByteBlock (или byte*) A и unsigned int B, генерирует массив длины B случайных байт, записывает результат в А.
+Вызываем функцию дважды для генераци  ключа key и инициализирующего значения iv (спецификация реализации ChaCha20 в crypto++)
+ </li>
+<pre><code class="language-сpp">
+void KeyGen(SecByteBlock &key, SecByteBlock &iv)
+{
+	AutoSeededRandomPool prng;
+	prng.GenerateBlock(key, key.size());
+	prng.GenerateBlock(iv, iv.size());
+}</code></pre>
+
+<li> Реализовываем функцию шифрования. Подаем на вход ключ, состоящий из пары (key,iv), строку открытого текста plaintext, и переменную  ciphertext, куда будет записан шифр-текст. <br>
+Для этого формируем объект enc типа Encryption, у которого реализованы методы SetKeyWithIV (задание ключа), и метод шифрования ProcessData с сигнатурой void ProcessData(byte *outString, const byte *inString, size_t length);
+</li>
+<pre><code class="language-cpp">
+void Enc(SecByteBlock &key, SecByteBlock &iv, std::string &plaintext, std::string &ciphertext)
+{
+	// Encryption object
+	ChaCha::Encryption enc;
+	enc.SetKeyWithIV(key, key.size(), iv, iv.size());
+
+	// Perform the encryption
+	ciphertext.resize(plaintext.size());
+	enc.ProcessData((byte*)&ciphertext[0], (const byte*)plaintext.data(), plaintext.size());
+}
+</code> </pre>
+
+<li> Реализовываем функцию дешифрования аналогично функции шифрования.
+</li>
+<pre><code class="language-cpp">
+void Dec(SecByteBlock &key, SecByteBlock &iv, std::string &ciphertext, std::string &decrypted)
+{
+	// Decryption object
+	ChaCha::Decryption dec;
+	dec.SetKeyWithIV(key, key.size(), iv, iv.size());
+
+	// Perform the decryption
+	decrypted.resize(ciphertext.size());
+	dec.ProcessData((byte*)&decrypted[0], (const byte*)ciphertext.data(), ciphertext.size());
+}
+</code> </pre>
+
+</ol>
+
+Исходный код лабораторной работы <a href="lab1.cpp"> здесь. </a>
+</p>
+
+  </body>
+</html>

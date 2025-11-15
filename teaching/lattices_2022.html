@@ -1,0 +1,195 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Криптография на решетках</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+        <style>
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 80%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+</style>
+    </head>
+	<body>
+        <h1> <center> Криптография на решетках 2022 </center> </h1>
+        <h2>  Общая информация </h2>
+
+        <p>
+        <b> Лектор: </b>  <a href="https://crypto-kantiana.com/elena.kirshanova/">  Елена Киршанова </a>
+
+        </p>
+
+        <p>
+        <b> Практика: </b>  <a href="https://crypto-kantiana.com/elena.kirshanova/">  Елена Киршанова </a>
+        </p>
+
+        <p>
+        <b> Лекции: </b> Вторник 8h30-10h00 в <b> 217 </b>
+        </p>
+
+        <p>
+        <b> Практика: </b> Вторник, 10h10-11h30 в <b> 217 </b>
+        </p>
+
+
+
+
+				<h2>  Для прохождения курса требуется </h2>
+
+				<ol>
+					<li> Выполнить и сдать все лабораторные работы   </li>
+					<li> Сдать экзамен   </li>
+				</ol>
+
+			<h2>  Лабораторные работы </h2>
+				<ol>
+					<li> <a href="lattices_2021/lattices_2021_lab0.html"> Лабораторная № 0 </a>  </li>
+					<li> <a href="lattices_2022/TP1.pdf"> Лабораторная № 1 </a>  </li>
+					<li> <a href="lattices_2022/TP2.pdf"> Лабораторная № 2 </a> <a href="lattices_2022/tp2_oracle_2.sage">  MSB оракул </a>  </li>
+					<li> <a href="lattices_2022/TP3.pdf"> Лабораторная № 3 </a>  </li>
+					<li> <a href="lattices_2021/TP5.pdf"> Доп. Лабораторная </a> &emsp; <a href="lattices_2021/lab5.sage"> Hash функция </a>  </li>
+						<!--
+					<li> <a href="lattices_2021/TP3.pdf"> Лабораторная № 3 </a> &emsp; <a href="lattices_2021/tp3_oracle_2.sage"> быстрый MSB оракул </a>  &emsp; <a href="lattices_2021/lab3.py"> fpylll решение </a>  </li>
+					<li> <a href="lattices_2021/TP4.pdf"> Лабораторная № 4 </a> &emsp; <a href="lattices_2021/lab4_GGHsign.sage"> GGH подпись </a>  </li>
+					<li> <a href="lattices_2021/TP5.pdf"> Доп. Лабораторная № 5 </a> &emsp; <a href="lattices_2021/lab5.sage"> Hash функция </a>  </li>
+					-->
+				</ol>
+
+				<h2>  Полезные ссылки </h2>
+				<ol>
+					<li>  <a href="http://perso.ens-lyon.fr/damien.stehle/LBCF_course.html"> Лекции Damien Stehlé </a> </li>
+					<li>  <a href="https://cims.nyu.edu/~regev/teaching/lattices_fall_2009/index.html"> Лекции Oded Regev </a> </li>
+					<li>  <a href="https://cseweb.ucsd.edu/classes/wi04/cse206a/"> Лекции Daniele Micciancio </a> </li>
+				</ol>
+
+         <h2>  Расписание </h2>
+
+        <table>
+          <tr>
+            <th>Дата</th>
+            <th>Тема</th>
+            <th>Упражнения</th>
+          </tr>
+
+
+          <tr>
+            <td>18.01</td>
+						<td> Основные определения: евклидова решетка, определитель, минимумы <a href="lattices_2021/Lecture1.pdf"> .pdf </a> </td>
+            <td> <a href="lattices_2022/TD1.pdf"> Упражнения № 1 </a> </td>
+					 </tr>
+						<td> 25.01</td>
+						<td> Теорема Минковского, конструкция А </td>
+						<td>  </td>
+          </tr>
+
+					</tr>
+					<td>01.02</td>
+					<td> LLL алгоритм <a href="lattices_2021/Lecture3.pdf">  .pdf </a> <a href="lattices_2022/LLL_example.py"> Скрипт LLL </a> </td>
+					<td> <a href="lattices_2022/TP1.pdf"> Лабораторная № 1  </a> &emsp; <a href="lattices_2022/lab1_input.txt"> lab1_input  </a> </td>
+					</tr>
+
+					</tr>
+					<td>08.02</td>
+					<td> Алгоритм перечисления для SVP. BKZ алгоритм <a href="lattices_2021/Lecture4.pdf">  .pdf (определение HKZ) </a>
+																													<a href="lattices_2022/enumeration+bkz.pdf">  .pdf (без HKZ) </a>
+
+					</td>
+					<td> <a href="lattices_2022/BKZ_example.py"> Скрипт BKZ </a>&emsp;
+					<a href="lattices_2022/enumeration_example.py"> Скрипт Enumeration </a> </td>
+					</tr>
+
+					</tr>
+					<td>15.02</td>
+					<td> Алгоритм просеивания <a href="lattices_2022/Lecture5.pdf">  .pdf </a> &emsp; <a href="lattices_2022/sieving.py"> G6k скрипт  </a> </td>
+					<td> </td>
+					</tr>
+
+					</tr>
+					<td>22.02</td>
+					<td> SVP vs. CVP <a href="lattices_2022/SVP_CVP.pdf">  .pdf </a> </td>
+					<td> Прием лабораторной  </td>
+					</tr>
+
+					</tr>
+					<td>01.03</td>
+					<td> Сложность CVP </td>
+					<td> Babai  в fpylll  &emsp; <a href="lattices_2022/sieving.py"> .py  </a>  </td>
+					</tr>
+
+					</tr>
+					<td>15.03</td>
+					<td> BDD, uSVP, SVP <a href="lattices_2021/Lecture7.pdf">  .pdf </a> </td>
+					<td> <a href="lattices_2022/TD2.pdf"> Упражнения № 2 </a>  </td>
+					</tr>
+
+					</tr>
+					<td>22.03</td>
+					<td> Преобразование Фурье. Гауссова функция <a href="lattices_2021/Lecture8.pdf">  .pdf </a> </td>
+					<td> </td>
+					</tr>
+
+					</tr>
+					<td>29.03</td>
+					<td> Сглаживающий параметр. Гауссова выборка над Z <a href="lattices_2021/Lecture9.pdf">  .pdf </a> <a href="lattices_2021/smoothing_example.pdf"> Пример </a></td>
+					<td> <a href="lattices_2021/TP3.pdf"> Лабораторная № 3  </a> &emsp; <a href="lattices_2021/tp3_oracle.sage"> MSB Oracle </a> </td>
+					</tr>
+
+					</tr>
+					<td>05.04</td>
+					<td>  Гауссова выборка над Z <a href="lattices_2022/Lecture_10_sampling.pdf">  .pdf </a> </td>
+					<td>  </td>
+					</tr>
+
+					</tr>
+					<td>12.04</td>
+					<td>  Задача SIS <a href="lattices_2021/Lecture10_part2.pdf"> .pdf </a> Сложность SIS <a href="lattices_2021/Lecture11.pdf"> .pdf </a></td>
+					<td>  </td>
+					</tr>
+
+					</tr>
+					<td>19.04</td>
+					<td> Подпись на решетках  </td>
+					</tr>
+
+
+					</tr>
+					<td>26.04</td>
+					<td> LWE. <a href="lattices_2021/LWE_part1.pdf"> .pdf </a>  Протокол шифрования на LWE. <a href="lattices_2021/LWE_part2.pdf"> .pdf </a> Трудность LWE. <a href="lattices_2021/LWE_part3.pdf"> .pdf </a>  </td>
+					<td>  </td>
+					</tr>
+
+				</tr>
+				<td>17.05</td>
+				<td> Современные криптоалгоритмы на решетках <a href="lattices_2022/final_lecture.pdf"> .pdf </a> </td>
+				<td>  </td>
+				</tr>
+
+<!--
+					</tr>
+					<td>18.05</td>
+					<td> Консультация  </td>
+					<td>  </td>
+					</tr> -->
+
+
+
+        </table>
+
+
+	</body>
+</html>
