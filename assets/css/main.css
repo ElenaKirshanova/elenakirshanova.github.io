@@ -1994,11 +1994,7 @@ input[type="radio"] + label:before {
     .email {
         position: relative;
         text-decoration: none;
-        
-        
-        
     }
-
     .email:before {
         content: "\f199";
         font-family: FontAwesome;
@@ -2006,6 +2002,34 @@ input[type="radio"] + label:before {
         text-decoration: none;
         color: #FFF;
         font-size: 25px;
+    }
+
+	.github {
+        position: relative;
+        text-decoration: none;
+    }
+    .github:before {
+        content: "\f09b";
+        font-family: FontAwesome;
+        font-style: normal;
+        text-decoration: none;
+        color: #FFF;
+        font-size: 25px;
+		padding-right: 10px;
+    }
+
+	.googlescholar {
+        position: relative;
+        text-decoration: none;
+    }
+    .googlescholar:before {
+        content: "\f19d";
+        font-family: FontAwesome;
+        font-style: normal;
+        text-decoration: none;
+        color: #FFF;
+        font-size: 23px;
+		padding-right: 10px;
     }
 
 
@@ -2102,7 +2126,8 @@ input[type="radio"] + label:before {
 			ul.publication li {
 				text-decoration: none;
 				display: block;
-				margin: 0 0 1.6875em 0;
+				/*margin: 0 0 1.6875em 0;*/
+				margin: 0 0 0.6em 0;
 				padding: 0.35em 0 0 1.5em;
 				position: relative;
 				vertical-align: top;
@@ -2203,7 +2228,7 @@ input[type="radio"] + label:before {
         ul.talk li {
             text-decoration: none;
             display: block;
-            margin: 0 0 1.6875em 0;
+            margin: 0 0 0.6em 0;
             padding: 0.6em 0 0 2.0em;
             position: relative;
             vertical-align: top;
@@ -2848,7 +2873,7 @@ tr:nth-child(even) {
 /* Footer */
 
 	#footer {
-		background: #fafafa;
+		background: #ffffff; /*#fafafa;*/
 		border-top: 0;
 		color: #c0c0c0;
 		overflow: hidden;
@@ -2856,7 +2881,7 @@ tr:nth-child(even) {
 	}
 
 		#footer .copyright {
-			line-height: 1em;
+			line-height: 0.4em;
 			list-style: none;
 			padding: 0;
 		}
